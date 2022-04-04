@@ -4,13 +4,19 @@ form.addEventListener("submit", acceptSubmit);
 
 function acceptSubmit(event) {
   event.preventDefault();
-  const {
-    elements: { login, password },
-  } = event.currentTarget;
-  if (login.value === "" || password.value === "") {
-    return alert("Все поля должны быть заполнены");
+  {
+    const {
+      elements: { email, password },
+    } = event.currentTarget;
+    if (email.value === "" || password.value === "") {
+      alert(`Input can't be empty`);
+    } else {
+      const submitValues = {
+        Email: email.value,
+        Password: password.value,
+      };
+      console.log(submitValues);
+    }
   }
-
-  console.log(`Login: ${login.value}, Password: ${password.value}`);
   event.currentTarget.reset();
 }
