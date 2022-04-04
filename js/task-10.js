@@ -3,7 +3,6 @@ const refs = {
   createBtn: document.querySelector("[data-create]"),
   destroyBtn: document.querySelector("[data-destroy]"),
   divBox: document.querySelector("#boxes"),
-  divEl: document.querySelector("#boxes div"),
 };
 console.log(refs.inputValue);
 console.log(refs.createBtn);
@@ -39,18 +38,13 @@ function createBox(amount) {
     console.log(newDiv.previousElementSibling);
   }
 }
-refs.destroyBtn.addEventListener("click", (array) => {
-  deleteElts(array);
+refs.destroyBtn.addEventListener("click", () => {
+  for (let i = 0; i < refs.divBox.children.length; i++) {
+    console.log([i]);
+    refs.divBox.children[i].remove();
+    [i] = [i - 1];
+  }
 });
-
-function deleteElts() {
-  const array = refs.divBox.children;
-  console.log(array);
-  array.forEach((element) => {
-    element.remove();
-  });
-  return array;
-}
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
