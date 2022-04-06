@@ -41,6 +41,8 @@ refs.createBtn.addEventListener("click", (event) => {
 //   }
 // }
 
+// --------------------- create --------------
+
 let firstDivWidth = 30;
 let firstDivHeight = 30;
 function createBox(amount) {
