@@ -15,8 +15,8 @@ function acceptSubmit(event) {
         Email: email.value,
         Password: password.value,
       };
+      event.currentTarget.reset();
       console.log(submitValues);
     }
   }
-  event.currentTarget.reset();
 }
