@@ -28,8 +28,10 @@ const galleryEl = document.querySelector(".gallery");
 
 // galleryEl.append(...createListItemEl);
 
-const createListItemEl = images.map((image) => {
-  const item = `<li class = "gallery__item"> <img src ="${image.url}" alt = "${image.alt}" class = "gallery__item__img"> </img> </li>`;
-  return item;
-});
+const createListItemEl = images
+  .map((image) => {
+    const item = `<li class = "gallery__item"> <img src ="${image.url}" alt = "${image.alt}" class = "gallery__item__img"> </img> </li>`;
+    return item;
+  })
+  .join("");
 galleryEl.insertAdjacentHTML("beforeend", createListItemEl);
